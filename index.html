@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pemesanan Makanan - Asrama Putra</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #ff6b6b 0%,
+          #feca57 25%,
+          #48dbfb 50%,
+          #ff9ff3 75%,
+          #54a0ff 100%
+        );
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        width: 100%;
+        padding: 40px;
+        animation: fadeIn 0.5s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #f093fb 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 2rem;
+        font-weight: 800;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #6c757d;
+        margin-bottom: 30px;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      .food-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+
+      .food-item {
+        border-radius: 15px;
+        padding: 25px;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .food-item:nth-child(1) {
+        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+      }
+
+      .food-item:nth-child(2) {
+        background: linear-gradient(135deg, #fad961 0%, #f76b1c 100%);
+      }
+
+      .food-item:nth-child(3) {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      }
+
+      .food-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.8);
+      }
+
+      .food-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+      }
+
+      .food-icon {
+        font-size: 1.8rem;
+      }
+
+      .phone-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        color: white;
+        text-decoration: none;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        width: 100%;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      }
+
+      .phone-link:hover {
+        background: linear-gradient(135deg, #20ba5a 0%, #0f7a6e 100%);
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+      }
+
+      .phone-link:active {
+        transform: scale(0.98);
+      }
+
+      .whatsapp-icon {
+        font-size: 1.3rem;
+      }
+
+      .phone-number {
+        font-size: 1rem;
+      }
+
+      .footer {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 2px solid rgba(102, 126, 234, 0.3);
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+
+      .footer strong {
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #f093fb 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 25px;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        .food-name {
+          font-size: 1.2rem;
+        }
+
+        .phone-link {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🍽️ Pemesanan Makanan</h1>
+      <p class="subtitle">Asrama Putra</p>
+
+      <div class="food-list">
+        <div class="food-item">
+          <div class="food-name">
+            <span class="food-icon">🍗</span>
+            Ayam Geprek
+          </div>
+          <a
+            href="https://wa.me/62895424468764"
+            class="phone-link"
+            target="_blank"
+          >
+            <span class="whatsapp-icon">💬</span>
+            <span class="phone-number">+62 895-4244-68764</span>
+          </a>
+        </div>
+
+        <div class="food-item">
+          <div class="food-name">
+            <span class="food-icon">🍛</span>
+            Nasi Goreng Kuli
+          </div>
+          <a
+            href="https://wa.me/6282384118093"
+            class="phone-link"
+            target="_blank"
+          >
+            <span class="whatsapp-icon">💬</span>
+            <span class="phone-number">+62 823-8411-8093</span>
+          </a>
+        </div>
+
+        <div class="food-item">
+          <div class="food-name">
+            <span class="food-icon">🌶️</span>
+            Mie Pedas
+          </div>
+          <a
+            href="https://wa.me/6282284587330"
+            class="phone-link"
+            target="_blank"
+          >
+            <span class="whatsapp-icon">💬</span>
+            <span class="phone-number">+62 822-8458-7330</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer">
+        Website dibuat oleh <strong>Rafky Briliano (Lian)</strong>
+      </div>
+    </div>
+  </body>
+</html>
