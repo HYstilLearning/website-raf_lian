@@ -607,7 +607,7 @@
       }
 
       /* Awesome Text Animation */
-        .awesome-text {
+      .awesome-text {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -619,8 +619,7 @@
         pointer-events: none;
         opacity: 0;
         text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
-          0 0 40px rgba(255, 255, 255, 0.6),
-          0 0 60px rgba(255, 255, 255, 0.4),
+          0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4),
           0 0 80px rgba(255, 100, 100, 0.5);
         animation: awesomeTextAppear 4s ease-out forwards;
         letter-spacing: 2px;
@@ -696,8 +695,7 @@
 
       .awesome-text.glow {
         filter: drop-shadow(0 0 10px currentColor)
-          drop-shadow(0 0 20px currentColor)
-          drop-shadow(0 0 30px currentColor);
+          drop-shadow(0 0 20px currentColor) drop-shadow(0 0 30px currentColor);
       }
 
       /* Floating Emojis */
@@ -801,7 +799,8 @@
         overflow: hidden;
         border-right: 3px solid;
         white-space: nowrap;
-        animation: typing 2s steps(20, end), blink-cursor 0.75s step-end infinite;
+        animation: typing 2s steps(20, end),
+          blink-cursor 0.75s step-end infinite;
       }
 
       @keyframes typing {
@@ -957,7 +956,8 @@
         <h2>🎉 Selamat Datang! 🎉</h2>
         <p>
           <strong>LAPER ORDER SAJA!!! 🍔🔥</strong><br />
-          Pilih menu favoritmu dan pesan sekarang! Jangan biarkan perut kosong! 😋
+          Pilih menu favoritmu dan pesan sekarang! Jangan biarkan perut kosong!
+          😋
         </p>
         <button class="welcome-btn" onclick="closeWelcome()">
           Mulai Pesan! 🍽️
@@ -1024,7 +1024,7 @@
           onclick="createRipple(event, this); changeMascotMessage();"
         >
           <div class="promo-badge">🌶️ PEDAS</div>
-          <div class="food-name">
+          <div class="food-n-ame">
             <span class="food-icon">🌶️</span>
             Mie Pedas
           </div>
@@ -1068,7 +1068,11 @@
     </audio>
 
     <!-- Dancing Mascot -->
-    <div class="dancing-mascot" id="dancingMascot" onclick="changeMascotMessage()">
+    <div
+      class="dancing-mascot"
+      id="dancingMascot"
+      onclick="changeMascotMessage()"
+    >
       🐻
     </div>
     <div class="speech-bubble" id="speechBubble">
@@ -1120,7 +1124,7 @@
         },
         {
           emoji: "🍕",
-          text: "Pesan makanan = Happy tummy!",
+          text: "nice try lil kids😂!",
         },
         {
           emoji: "🤪",
@@ -1128,15 +1132,15 @@
         },
         {
           emoji: "🎊",
-          text: "Website ini dibuat dengan cinta dan kode!",
+          text: "Website ini dibuat dengan sepenuh hati oleh programmer pemula yang ingin expert di bidang ini🤓!",
         },
         {
           emoji: "🌈",
-          text: "Have a colorful day!",
+          text: "semoga hari mu cerah kids😜!",
         },
         {
           emoji: "🚀",
-          text: "Website ini bisa terbang!",
+          text: "Website ini bisa salto!",
         },
       ];
 
@@ -1180,9 +1184,7 @@
       // Fungsi untuk menampilkan teks keren
       function showAwesomeText() {
         const message =
-          awesomeMessages[
-            Math.floor(Math.random() * awesomeMessages.length)
-          ];
+          awesomeMessages[Math.floor(Math.random() * awesomeMessages.length)];
         const awesomeText = document.createElement("div");
         awesomeText.className = "awesome-text rainbow glow";
         awesomeText.textContent = message;
@@ -1199,7 +1201,7 @@
 
       // Partikel untuk teks keren
       function createTextParticles(element) {
-        const particles = ["✨", "💫", "⭐", "🌟", "🎉", "🔥", "⚡"];
+        const particles = ["😎", "💫", "⭐", "🌟", "🎉", "🔥", "⚡"];
         for (let i = 0; i < 50; i++) {
           setTimeout(() => {
             const particle = document.createElement("div");
@@ -1207,10 +1209,8 @@
             particle.textContent =
               particles[Math.floor(Math.random() * particles.length)];
             const rect = element.getBoundingClientRect();
-            particle.style.left =
-              rect.left + Math.random() * rect.width + "px";
-            particle.style.top =
-              rect.top + Math.random() * rect.height + "px";
+            particle.style.left = rect.left + Math.random() * rect.width + "px";
+            particle.style.top = rect.top + Math.random() * rect.height + "px";
             particle.style.fontSize = Math.random() * 1 + 1 + "rem";
             document.body.appendChild(particle);
             setTimeout(() => particle.remove(), 2000);
@@ -1255,7 +1255,7 @@
       });
 
       // Change mascot emoji randomly
-      const mascots = ["🐻", "🐰", "🐼", "🦊", "🐨", "🐶", "🐸", "🦄"];
+      const mascots = ["😏", "🤑", "🥶", "🤠", "😋", "🤔", "🤐", "🙄"];
       setInterval(() => {
         mascot.textContent =
           mascots[Math.floor(Math.random() * mascots.length)];
@@ -1296,10 +1296,8 @@
         const rect = element.getBoundingClientRect();
         const sparkle = document.createElement("div");
         sparkle.className = "sparkle";
-        sparkle.style.left =
-          rect.left + Math.random() * rect.width + "px";
-        sparkle.style.top =
-          rect.top + Math.random() * rect.height + "px";
+        sparkle.style.left = rect.left + Math.random() * rect.width + "px";
+        sparkle.style.top = rect.top + Math.random() * rect.height + "px";
         document.body.appendChild(sparkle);
         setTimeout(() => sparkle.remove(), 1000);
       }
@@ -1308,9 +1306,7 @@
       function showFunnyPopup() {
         const popup = document.getElementById("funnyPopup");
         const message =
-          funnyMessages[
-            Math.floor(Math.random() * funnyMessages.length)
-          ];
+          funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
         document.getElementById("popupTitle").textContent = message.emoji;
         document.getElementById("popupText").textContent = message.text;
         popup.classList.add("show");
@@ -1339,7 +1335,7 @@
 
       // Create floating hearts
       function createFloatingHearts() {
-        const hearts = ["💖", "💕", "💗", "💓", "💝"];
+        const hearts = ["😍", "💕😎", "💗😋", "💓", "💝"];
         for (let i = 0; i < 10; i++) {
           setTimeout(() => {
             const heart = document.createElement("div");
@@ -1403,7 +1399,8 @@
           setTimeout(() => {
             const emoji = document.createElement("div");
             emoji.className = "floating-emoji";
-            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.textContent =
+              emojis[Math.floor(Math.random() * emojis.length)];
             emoji.style.left = Math.random() * 100 + "%";
             emoji.style.animationDelay = Math.random() * 0.5 + "s";
             document.body.appendChild(emoji);
@@ -1479,8 +1476,7 @@
       // Random dancing food icons
       setInterval(() => {
         const icons = document.querySelectorAll(".food-icon");
-        const randomIcon =
-          icons[Math.floor(Math.random() * icons.length)];
+        const randomIcon = icons[Math.floor(Math.random() * icons.length)];
         randomIcon.style.animation = "bounceIcon 0.5s ease";
         setTimeout(() => {
           randomIcon.style.animation = "";
